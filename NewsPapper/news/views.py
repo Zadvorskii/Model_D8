@@ -43,7 +43,7 @@ class PostCreateView(CreateView):
     form_class = PostForm
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     template_name = 'post_create.html'
     form_class = PostForm
 
